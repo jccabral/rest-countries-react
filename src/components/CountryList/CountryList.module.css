@@ -1,0 +1,8 @@
+.root {
+    margin: 0em var(--space-2);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 14em);
+    justify-content: space-around;
+    gap: 5em 0.9em;
+  }

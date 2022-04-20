@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap');
+
+:root {
+  --layout-mobile: 375px;
+  --layout-desktop: 1440px;
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue: hsl(207, 26%, 17%);
+  --very-dark-blue-lite: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --font-light: 300;
+  --font-regular: 600;
+  --font-bold: 800;
+  --space-0: 14px;
+  --space-1: 1em;
+  --space-2: 2em;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.header {
+  padding: 0.4em var(--space-2);
+  cursor: default;
+  box-shadow: 0px 4px 6px 2px rgba(130,130,130,0.2);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header :is(h1) {
+  font-size: 1.4em;
+}
+
+.theme-btn {
+  width: 8em;
+  background: var(--white);
+  border: none;
+  cursor: pointer;
+
+  font-family: 'Nunito', sans-serif;
+  font-weight: var(--font-regular);
+  font-size: 1em;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme-btn :is(svg) {
+  width: 1.4em;
+}
+
+.app {
+  background: var(--very-light-gray);
+}
+
+.searchbar {
+  display: flex;
+  justify-content: space-between;
+}
