@@ -33,7 +33,7 @@ body {
 }
 
 .header :is(h1) {
-  font-size: 1.4em;
+  font-size: clamp(0.8em, 3vw, 1.4em)
 }
 
 .theme-btn {
@@ -57,9 +57,4 @@ body {
 
 .app {
   background: var(--very-light-gray);
-}
-
-.searchbar {
-  display: flex;
-  justify-content: space-between;
 }
