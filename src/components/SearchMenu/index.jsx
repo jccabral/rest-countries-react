@@ -7,12 +7,14 @@ export default function SearchMenu() {
   const { filterSearch } = useContext(CountryContext)
   const { root, input } = styles;
 
+  const handleSearch = ({ target }) => filterSearch(target.value) 
+
   return (
     <section className={root}>
       <div className={input}>
         <label>
           <SearchIcon />
-          <input type="text" placeholder="Search for a country..." />
+          <input type="text" placeholder="Search for a country..." onInput={handleSearch} />
         </label>
       </div>
 
@@ -27,13 +29,17 @@ function RegionDropdown() {
   const { dropdown, show } = styles
   const regions = [
     'Africa',
-    'America',
+    'Americas',
     'Asia',
     'Europe',
     'Oceania'
   ]
   const dropdownClassNames = `${styles['dropdown-list']} ${open ? show : null}`
   const handleOpenDropdown = () => setOpen(!open)
+  const handleSelectRegion = ({ target }) => {
+    handleOpenDropdown()
+    filterByRegion(target.text)
+  }
   const ChevronIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="ionicon" viewBox="0 0 512 512">
       <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="48" d="m112 184 144 144 144-144"/>
@@ -43,7 +49,7 @@ function RegionDropdown() {
   return (
   <div className={dropdown}>
     <div className={styles["dropdown-toggle"]} onClick={handleOpenDropdown}>
-      <button aria-expanded="false">Filter by region</button>
+      <button aria-expanded="false">{ region ?? 'Filter by region' }</button>
       <ChevronIcon />
     </div>
 
@@ -51,7 +57,7 @@ function RegionDropdown() {
       {
         regions.map(region => (
           <li key={region}>
-            <a className={styles["dropdown-item"]} href="#" onClick={handleOpenDropdown}>{region}</a>
+            <a className={styles["dropdown-item"]} href="#" onClick={handleSelectRegion}>{region}</a>
           </li>
         ))
       }
