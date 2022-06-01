@@ -10,16 +10,24 @@ export default function CountryList() {
 
     useEffect(() => {
         (async () => {
-            const res = await CountryService.getAllCountries()
-            setCountries(res)
+            if(region) {
+                const res = await CountryService.getCountryByRegion(region)
+                setCountries(res)
+            } else if(currentSearch) {
+                const res = await CountryService.getCountryByName(currentSearch)
+                setCountries(res)
+            } else {
+                const res = await CountryService.getAllCountries()
+                setCountries(res)
+            }
         })()
-    }, [])
+    }, [region, currentSearch])
     
     return (
         <div className={styles.root}>
             {
-                countries.map(({ name, capital, population, region, flag }) => 
-                    <CountryCard key={name} name={name} capital={capital} population={population} region={region} flag={flag} />)
+                countries.map(({ name, capital, population, region, flags }) =>
+                    <CountryCard key={name.common} name={name.common} capital={capital} population={population} region={region} flag={flags.png} />)
             }
         </div>
     )
