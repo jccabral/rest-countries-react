@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CountryContext } from "../../context/country";
 import styles from "./SearchMenu.module.css";
 import SearchIcon from "./SearchIcon";
 
 export default function SearchMenu() {
+  const { filterSearch } = useContext(CountryContext)
   const { root, input } = styles;
 
   return (
@@ -20,6 +22,7 @@ export default function SearchMenu() {
 }
 
 function RegionDropdown() {
+  const { filterByRegion, region } = useContext(CountryContext)
   const [open, setOpen] = useState(false)
   const { dropdown, show } = styles
   const regions = [
