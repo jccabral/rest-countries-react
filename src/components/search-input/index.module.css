@@ -1,0 +1,17 @@
+label {
+  background: var(--white);
+  width: 30em;
+  min-height: 3em;
+}
+
+label :is(svg) {
+  width: 1.4em;
+  margin: 0 0 0 1em;
+  color: var(--dark-gray);
+}
+
+label :is(input) {
+  width: 100%;
+  height: auto;
+  margin: 0 0 0 1em;
+}

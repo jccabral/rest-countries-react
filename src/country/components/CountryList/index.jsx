@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react"
-import { CountryContext } from "../../context/country"
+import { CountryContext } from "../../country"
 import CountryService from "../../country.service"
 import CountryCard from "../CountryCard"
 import styles from './CountryList.module.css'

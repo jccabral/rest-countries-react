@@ -1,0 +1,20 @@
+header {
+  padding: 0.4em 2em;
+  cursor: default;
+}
+
+header :is(h1) {
+  font-size: clamp(0.8em, 3vw, 1.4em)
+}
+
+button {
+  width: 8em;
+  background: transparent;
+  border: none;
+
+  font-size: 1em;
+}
+
+button :is(svg) {
+  width: 1.4em;
+}

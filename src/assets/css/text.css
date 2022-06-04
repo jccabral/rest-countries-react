@@ -1,0 +1,15 @@
+.family-default {
+  font-family: var(--nunito)
+}
+
+.regular {
+  font-weight: var(--font-regular);
+}
+
+.bold {
+  font-weight: var(--font-bold);
+}
+
+.pointer {
+  cursor: pointer;
+}
